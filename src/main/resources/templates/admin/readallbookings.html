@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Details</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f9fafb;
+    padding:40px;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1f2937;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:15px;
+    color:#16a34a;
+}
+
+/* admin home link */
+a[href="dashboard"]{
+    display:inline-block;
+    margin-bottom:15px;
+    text-decoration:none;
+    background:#e0f2fe;
+    color:#0f172a;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:600;
+    border:1px solid #bae6fd;
+    transition:0.3s;
+}
+
+a[href="dashboard"]:hover{
+    background:#bae6fd;
+}
+
+/* table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+thead{
+    background:#e2e8f0;
+    color:#111827;
+}
+
+th,td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+    font-size:14px;
+}
+
+tbody tr:hover{
+    background:#f1f5f9;
+}
+
+/* message column */
+td.message{
+    max-width:220px;
+    word-wrap:break-word;
+    color:#374151;
+}
+
+/* delete button */
+a{
+    text-decoration:none;
+}
+
+a.delete-btn,
+a[href*="deleteBooking"]{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:7px 12px;
+    border-radius:6px;
+    font-weight:600;
+    border:1px solid #fecaca;
+    transition:0.3s;
+}
+
+a.delete-btn:hover,
+a[href*="deleteBooking"]:hover{
+    background:#fecaca;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Booking Details</h1>
+ 
+    <a href="dashboard">ADMIN HOME</a>
+
+    <h2 th:text="${message}"></h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Source</th>
+                <th>Email</th>
+                <th>Destination</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Comfort</th>
+                <th>Adult</th>
+                <th>Children</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr th:each="booking :${allBookings}">
+                <td th:text="${booking.id}"></td>
+                <td th:text="${booking.name}"></td>
+                <td th:text="${booking.source}"></td>
+                <td th:text="${booking.email}"></td>
+                <td th:text="${booking.destination}"></td>
+                <td th:text="${booking.time}"></td>
+                <td th:text="${booking.date}"></td>
+                <td th:text="${booking.comfort}"></td>
+                <td th:text="${booking.adult}"></td>
+                <td th:text="${booking.children}"></td>
+                <td class="message" th:text="${booking.message}"></td>
+
+                <td>
+                    <a th:href="@{/admin/deleteBooking/{id}(id=${booking.id})}">
+                        DELETE
+                    </a>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

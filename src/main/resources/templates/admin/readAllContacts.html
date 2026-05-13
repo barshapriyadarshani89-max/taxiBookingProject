@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Read All Contacts</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f9fafb;
+    padding:40px;
+}
+
+.container{
+    width:95%;
+    margin:auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1f2937;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:15px;
+    color:#16a34a;
+}
+
+/* admin home button */
+a[href="dashboard"]{
+    display:inline-block;
+    margin-bottom:15px;
+    text-decoration:none;
+    background:#e0f2fe;
+    color:#0f172a;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:600;
+    border:1px solid #bae6fd;
+    transition:0.3s;
+}
+
+a[href="dashboard"]:hover{
+    background:#bae6fd;
+}
+
+/* table */
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+thead{
+    background:#e2e8f0;
+    color:#111827;
+}
+
+th,td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #e5e7eb;
+    font-size:14px;
+}
+
+tbody tr:hover{
+    background:#f1f5f9;
+}
+
+/* delete button */
+a{
+    text-decoration:none;
+}
+
+a[href*="deleteContact"]{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:7px 12px;
+    border-radius:6px;
+    font-weight:600;
+    border:1px solid #fecaca;
+    transition:0.3s;
+}
+
+a[href*="deleteContact"]:hover{
+    background:#fecaca;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>READ ALL CONTACTS SECTION</h1>
+
+    <a href="dashboard">ADMIN HOME</a>
+
+    <h2 th:text="${message}"></h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>MESSAGE</th>
+                <th>PHONE</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr th:each="contact : ${allcontacts}">
+                <td th:text="${contact.id}"></td>
+                <td th:text="${contact.name}"></td>
+                <td th:text="${contact.email}"></td>
+                <td th:text="${contact.message}"></td>
+                <td th:text="${contact.phone}"></td>
+
+                <td>
+                    <a th:href="@{/admin/deleteContact/{id}(id=${contact.id})}">
+                        DELETE
+                    </a>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+	<head>
+		<title>About</title>
+		<meta charset="utf-8">
+		<meta name = "format-detection" content = "telephone=no" />
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/superfish.js"></script>
+		<script src="js/jquery.ui.totop.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/jquery.mobilemenu.js"></script>
+		<script src="js/jquery.easing.1.3.js"></script>
+		<script>
+			$(document).ready(function(){
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+		<!--[if lt IE 8]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+					<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+				</a>
+			</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class="" id="top">
+		<div class="main">
+<!--==============================header=================================-->
+		<div th:insert="~{fragments/header.html}"></div>
+		
+			
+<!--==============================Content=================================-->
+			<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - April 07, 2014!</div>
+				<div class="container_12">
+					<div class="grid_7">
+    <h3>A Few Words About Us</h3>
+
+    <img src="images/page2_img1.jpg" alt="" class="img_inner fleft">
+
+    <div class="extra_wrapper">
+        <div class="text1 color2">
+            <a href="#">Your trusted taxi booking partner for safe and comfortable rides.</a>
+        </div>
+
+        <p>
+            We provide reliable taxi services for local travel, airport pickups, outstation trips, and daily commuting needs.
+        </p>
+
+        Our mission is to make every journey smooth, affordable, and secure for our customers with professional drivers and well-maintained vehicles.
+    </div>
+
+    <div class="clear cl1"></div>
+
+    <p>
+        Our taxi booking platform is designed to offer quick booking, transparent pricing, and excellent customer support. Whether you are traveling for business, family trips, or personal work, we ensure a hassle-free travel experience.
+    </p>
+
+    <p>
+        With 24/7 availability and a customer-first approach, we continue to build trust through punctual service, safety, and comfort. We aim to make city and outstation travel easier for everyone.
+    </p>
+</div>
+					<div class="grid_4 prefix_1">
+
+    <h3>Why Choose Us</h3>
+
+    <ul class="list li">
+        <li class="list_count">1</li>
+        <li class="extra_wrapper">
+            <div class="text1 color2">
+                <a href="#">24/7 Taxi Availability</a>
+            </div>
+            Book your ride anytime with our round-the-clock taxi service for local and outstation travel.
+        </li>
+    </ul>
+
+    <ul class="list li">
+        <li class="list_count">2</li>
+        <li class="extra_wrapper">
+            <div class="text1 color2">
+                <a href="#">Professional Drivers</a>
+            </div>
+            Our experienced and verified drivers ensure a safe, comfortable, and smooth travel experience.
+        </li>
+    </ul>
+
+    <ul class="list li">
+        <li class="list_count">3</li>
+        <li class="extra_wrapper">
+            <div class="text1 color2">
+                <a href="#">Affordable Pricing</a>
+            </div>
+            Enjoy transparent pricing with no hidden charges and budget-friendly travel options.
+        </li>
+    </ul>
+
+    <ul class="list li">
+        <li class="list_count">4</li>
+        <li class="extra_wrapper">
+            <div class="text1 color2">
+                <a href="#">Easy Online Booking</a>
+            </div>
+            Quickly book your ride online with a simple and user-friendly booking process.
+        </li>
+    </ul>
+
+</div>
+					<div class="clear"></div>
+					<div class="grid_12">
+    <h3 class="h3__ind1">Testimonials</h3>
+</div>
+
+<div class="grid_4">
+    <blockquote class="bq1">
+        <p>
+            <i>
+                Excellent taxi service with professional drivers. The booking process was very smooth and easy.
+            </i>
+        </p>
+        <div class="color2">Rahul Sharma</div>
+    </blockquote>
+</div>
+
+<div class="grid_4">
+    <blockquote class="bq1">
+        <p>
+            <i>
+                Very comfortable ride and affordable pricing. I always use this service for airport travel.
+            </i>
+        </p>
+        <div class="color2">Priya Verma</div>
+    </blockquote>
+</div>
+
+<div class="grid_4">
+    <blockquote class="bq1">
+        <p>
+            <i>
+                Safe, reliable, and always on time. Highly recommended for daily and outstation trips.
+            </i>
+        </p>
+        <div class="color2">Amit Kumar</div>
+    </blockquote>
+</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+
+<div  th:insert="~{fragments/footer.html}"></div>
+
+<!--==============================footer=================================-->
+		
+	</body>
+</html>
